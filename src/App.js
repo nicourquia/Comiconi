@@ -3,11 +3,16 @@ import Navbar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 
 function App() {
+  const info = {
+    nombre: "Nicolas",
+    apellido: "Urquia",
+}
+
   return (
     <div className="App">
       <header className="App-header">
         <Navbar></Navbar>
-        <ItemListContainer/>
+        <ItemListContainer data={info}/>
       </header>
     </div>
   );
