@@ -11,4 +11,4 @@ const CarWidget = () => {
     )
 }
 
-export default CarWidget
+export default CarWidget;
