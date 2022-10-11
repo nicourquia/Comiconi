@@ -1,20 +1,18 @@
 import React, { Component }  from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import Home from './pages/Home'
 
 function App() {
-  const info = {
-    nombre: "Nicolas",
-    apellido: "Urquia",
-}
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar></Navbar>
-        <ItemListContainer data={info}/>
-      </header>
-    </div>
+    <BrowserRouter className="App">
+      <Navbar>
+        <Routes>
+          <Route exact path='/' element={<Home/>}/>
+        </Routes>
+      </Navbar>
+    </BrowserRouter>
   );
 }
 
