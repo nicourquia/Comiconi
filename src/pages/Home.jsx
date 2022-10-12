@@ -1,13 +1,9 @@
-import React, { Component }  from 'react';
-import CardProduct from './components/CardProduct';
+import React from 'react'
 
-function Home() {
-
+const Home = () => {
   return (
-    <div>
-        <CardProduct></CardProduct>
-    </div>
-  );
+    <div>Home</div>
+  )
 }
 
 export default Home;

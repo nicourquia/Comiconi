@@ -1,18 +1,16 @@
 import React, { Component }  from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
+import CarWidget from './components/CarWidget';
 import Navbar from './components/NavBar';
-import Home from './pages/Home'
+import Home from './pages/Home';
 
 function App() {
 
   return (
-    <BrowserRouter className="App">
-      <Navbar>
-        <Routes>
-          <Route exact path='/' element={<Home/>}/>
-        </Routes>
-      </Navbar>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<CarWidget />} />
+    </Routes>
   );
 }
 
