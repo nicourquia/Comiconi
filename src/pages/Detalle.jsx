@@ -3,11 +3,17 @@ import { useParams } from 'react-router-dom';
 import {getByIdProductos} from "../services/ProductServices"
 import { Button } from 'react-bootstrap'
 import Loading from "../components/Loading"
+import { BsCart } from "react-icons/bs"
 
 function Detalle() {
   const [products,setProducts] = useState({})
   const [loading,setLoading] = useState(true)
   const {id} = useParams();
+  const styles ={
+    cantselector:{
+        width: "40px",
+    },
+  }
   console.log("Id", id)
   useEffect(
     ()=>{
@@ -33,6 +39,8 @@ function Detalle() {
           <p>{products.description}</p>
           <p>{products.sku}</p>
           <Button>Comprar</Button>
+          <Button>Agregar <BsCart></BsCart></Button>
+          <input type="number" min="1" placeholder="1" style={styles.cantselector}/>
         </div>
       </Loading>
     );

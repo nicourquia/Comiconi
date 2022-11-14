@@ -14,6 +14,7 @@ import ProductsAlta from '../pages/ABMProducts/ProductsAlta'
 import ProductsUpdate from '../pages/ABMProducts/ProductsUpdate'
 import Categoria from '../pages/Categoria';
 import {Navbar, Container} from 'react-bootstrap'
+import Carrito from '../pages/Carrito'
 
 function Public(){
     const [login, setLogin] = useState(false)
@@ -30,6 +31,7 @@ function Public(){
                     <Route path="/item/:id" element={<Detalle />}/>
                     <Route path='/registro' element={<Registro/>}/>
                     <Route path='/categoria/:categoriaId' element={<Categoria/>}/>
+                    <Route path='/carrito/' element={<Carrito/>}/>
                 </Routes>
             </Container> 
             </Navbar>

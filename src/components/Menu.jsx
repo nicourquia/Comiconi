@@ -48,8 +48,9 @@ function Menu({statusLogin}){
                     <Nav.Link as={Link} to={`/categoria/${cat[2]}`}>Iron Man</Nav.Link>
                 </Nav>
                 <Nav>
-                    <BsCart style={styles.cart}>
-                    </BsCart>
+                    <Nav.Link as={Link} to={`/carrito`}>
+                        <BsCart style={styles.cart}></BsCart>
+                    </Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

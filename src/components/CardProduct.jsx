@@ -47,6 +47,7 @@ export default function CardProduct() {
 
   return (
     <div>
+
       {/* <Box component={'span'} sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
         {comics.map((comic) => (
           <Card sx={{ maxWidth: 345, m: 1 }}>
