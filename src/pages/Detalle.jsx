@@ -4,11 +4,14 @@ import {getByIdProductos} from "../services/ProductServices"
 import { Button } from 'react-bootstrap'
 import Loading from "../components/Loading"
 import { BsCart } from "react-icons/bs"
+import { Link } from "react-router-dom"
+import ItemCount from "../components/ItemCount"
 
 function Detalle() {
   const [products,setProducts] = useState({})
   const [loading,setLoading] = useState(true)
   const {id} = useParams();
+  const [quantitySelected, setQuantitySelected] = useState(0)
   const styles ={
     cantselector:{
         width: "40px",
@@ -38,9 +41,16 @@ function Detalle() {
           <p>${products.price}</p>
           <p>{products.description}</p>
           <p>{products.sku}</p>
-          <Button>Comprar</Button>
-          <Button>Agregar <BsCart></BsCart></Button>
-          <input type="number" min="1" placeholder="1" style={styles.cantselector}/>
+          {
+            quantitySelected !== 0 ?
+            <Link as={Link} to={`/carrito`}>
+              <Button>Comprar</Button>
+            </Link>
+            :
+            <div>
+              <ItemCount setQuantitySelected={setQuantitySelected}></ItemCount>
+            </div>
+          }
         </div>
       </Loading>
     );
