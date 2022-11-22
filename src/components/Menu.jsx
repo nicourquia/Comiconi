@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom"
 import {Navbar, Nav, Container, NavDropdown} from 'react-bootstrap'
 import { BsCart } from "react-icons/bs"
+import CartWidget from "../components/CartWidget"
 
 function Menu({statusLogin}){
     const cat = [1, 2, 3]
@@ -48,9 +49,10 @@ function Menu({statusLogin}){
                     <Nav.Link as={Link} to={`/categoria/${cat[2]}`}>Iron Man</Nav.Link>
                 </Nav>
                 <Nav>
-                    <Nav.Link as={Link} to={`/carrito`}>
+                    <CartWidget></CartWidget>
+                    {/* <Nav.Link as={Link} to={`/carrito`}>
                         <BsCart style={styles.cart}></BsCart>
-                    </Nav.Link>
+                    </Nav.Link> */}
                 </Nav>
             </Container>
         </Navbar>

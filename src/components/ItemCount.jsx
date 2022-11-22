@@ -2,6 +2,7 @@ import { useState, useContext } from 'react'
 import { Button } from 'react-bootstrap'
 import { BsCart } from "react-icons/bs"
 import { CartContext } from "../context/CartContext"
+import CartProvider from "../context/CartContext"
 
 const ItemCount = (setQuantitySelected, productData) => {
     const {addproductToCart} = useContext(CartContext)
@@ -30,7 +31,10 @@ const ItemCount = (setQuantitySelected, productData) => {
                 <Button onclick={addQuantity}>+</Button>
             </div>
             <Button>Agregar<BsCart/></Button>
+            
         </div>
+
+        
     )
 }
 
